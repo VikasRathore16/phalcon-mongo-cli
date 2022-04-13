@@ -1,0 +1,46 @@
+<?php
+header("Cache-Control: no cache");
+?>
+
+<body class="container mt-5 text-light" style="background-color:#000000">
+    <h2 class='row mb-5'>Login</h2>
+    <!--checking errors -->
+    <?php if (isset($message)) { ?>
+        <div class="alert alert-danger">
+            <?php echo $message; ?>
+        </div>
+
+    <?php   }
+    ?>
+    <!-- -------------------------------------------form starts --------------------------------------->
+
+    <?php echo $this->tag->form(["", 'class' => 'form justify-content border p-5']); ?>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <p>
+                <label for="email">E-Mail</label>
+                <?php echo $this->tag->textField(["email", 'class' => 'form-control']); ?>
+            </p>
+
+            <p>
+                <label for="email">Password</label>
+                <?php echo $this->tag->textField(["password", 'class' => 'form-control']); ?>
+            </p>
+
+            <p>
+                <label for="email">Not a User ?</label>
+                <?php echo $this->tag->linkTo("user/signup", "Sign Up"); ?>
+            </p>
+
+            <p>
+                <?php echo $this->tag->submitButton(["Connet with Spotify", 'class' => 'btn btn-primary']); ?>
+            </p>
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+    </form>
+    <!-- -------------------------------------------form ends --------------------------------------->
+
+</body>
